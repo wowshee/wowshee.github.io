@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+<style>
+    #naver{background-color: chartreuse; 
+        width: 150px;  height: 20px; padding:10px 20px;  }
+   #kakao{   padding:10px 20px;
+            background-color:yellow ;
+        width: 150px;  height: 20px;  }
+</style>
+
+</head>
+<body>
+    <form action="#" method="POST">
+        <center>
+            <br><br>
+    <h1>로그인</h1>
+        <table height="100">
+        <tr> <th>아 이 디</th>
+            <td><input type="text" size="10" id="id"></td>
+        </tr>
+        <tr> <th>비밀번호</th>
+            <td><input type="password" size="10" id="pw"></td>
+        </tr>
+        </table>
+        <input type="submit" value="회원가입" onclick="location='join.html'">
+        <input type="submit" value="로그인" >
+        <br><br>
+    <div class="side">
+        <div id="naver"><a href="https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fwww.naver.com"> 네이버로 로그인</a></div>
+        <br/>
+        <div id="kakao"><a href="https://accounts.kakao.com/login?continue=https%3A%2F%2Fkauth.kakao.com%2Foauth%2Fauthorize%3Fis_popup%3Dfalse%26ka%3Dsdk%252F1.39.7%2520os%252Fjavascript%2520sdk_type%252Fjavascript%2520lang%252Fko-KR%2520device%252FWin32%2520origin%252Fhttps%25253A%25252F%25252Fkahi.co.kr%26auth_tran_id%3Do4cd7udznp971e351bd0e5609096f134bf6a56d5882kf4sy2zi%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fkahi.co.kr%252FApi%252FMember%252FOauth2ClientCallback%252Fkakao%252F%26client_id%3D71e351bd0e5609096f134bf6a56d5882">카카오로 로그인</a></div>
+        </a></div>
+    </div>
+</form>
+        
+ 
+</body>
+</html>

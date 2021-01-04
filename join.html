@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join</title>
+    <style>
+        fieldset {width: 350px; height: 400px;}
+        th{text-align: left;}
+        #naver{background-color: chartreuse; 
+            width: 150px;  height: 20px; padding:10px 20px;  }
+        #kakao{   padding:10px 20px;
+                background-color:yellow ;
+            width: 150px;  height: 20px;  }
+        #voice{padding: 10px 20px;}
+    </style>
+</head>
+<script language=javascript>
+
+    function yes()//아이디부분 확인 눌렀을때 action
+    {
+    
+        var Digit ="abcdefghijklnmopqrstuvwxyzABCDEFGHIJKLNMOPQRSTUVWXYZ1234567890"
+    if(x.ID.value=="")
+        {
+    alert("아이디를 입력해 주세요.")
+    x.ID.focus();
+    return ;
+        }
+        if(x.ID.value.length<4 || x.ID.value.length>15){
+        alert("아이디는 4자 이상 15자 이하여야 합니다.");
+        x.ID.value="";
+        x.ID.focus();
+        document.x.IDCHCK.checked=false
+        return;
+        }
+        for(i=0;i<x.ID.value.length;i++)
+        {
+            if(Digit.indexOf(x.ID.value.substring(i,i+1)) == -1)
+            {
+                alert("아이디는 영문과 숫자의 조합만 사용할 수 있습니다.");
+                x.ID.value="";
+                x.ID.focus();
+                document.x.IDCHCK.checked=false
+                return;
+            }
+        }
+    
+        if(x.ID.value.length>4 || x.ID.value.length<15)
+        {
+            for(i=0;i<x.ID.value.length;i++)
+        {
+            if(Digit.indexOf(x.ID.value.substring(i,i+1)) == 0)
+            {
+    
+            }
+    }
+        alert("확인 되었습니다.")
+    document.x.IDCHCK.checked=true}
+    }
+    
+    
+    
+    function yangsick(){//타당성 검사 라인
+    
+    var alphaDigit ="abcdefghijklnmopqrstuvwxyzABCDEFGHIJKLNMOPQRSTUVWXYZ1234567890"
+        var alphaPH = "1234567890"
+    
+    if(x.irum.value=="")
+        {
+    alert("이름을 입력해 주세요.")
+    x.irum.focus();
+    return;
+        }
+            for(i=0;i<x.irum.value.length;i++){
+    var CodeNum=x.irum.value.charCodeAt()
+    if (CodeNum<128)
+    {
+        alert("이름은 한글만 입력해 주세요.");
+        x.irum.value="";
+        x.irum.focus();
+        return;
+    }
+        }
+    
+    
+    if(x.ID.value=="")
+        {
+    alert("아이디를 입력해 주세요.")
+    x.ID.focus();
+    document.x.IDCHCK.checked==false
+    return ;
+    
+        }
+        if(x.IDCHCK.checked==false)
+            {
+                alert("아이디옆에 확인버튼으로 아이디를 확인해 주세요.")
+                return;
+            }
+        
+        if(x.ID.value.length<4 || x.ID.value.length>15){
+        alert("아이디옆에 확인버튼으로 아이디를 다시 확인해 주세요.");
+        x.ID.focus();
+        document.x.IDCHCK.checked=false
+        return;
+        }
+        for(i=0;i<x.ID.value.length;i++)
+        {
+            if(alphaDigit.indexOf(x.ID.value.substring(i,i+1)) == -1)
+            {
+                alert("아이디옆에 확인버튼으로 아이디를 다시 확인해 주세요.");
+                
+                x.ID.focus();
+                document.x.IDCHCK.checked=false
+                return;
+            }
+        }
+    
+    
+        if(x.PW1.value=="")
+        {
+    alert("비밀번호를 입력해 주세요.")
+    x.PW1.focus();
+    return ;
+        }
+    
+        if(x.PW2.value=="")
+        {
+    alert("비밀번호 확인란을 입력해 주세요.")
+    x.PW2.focus();
+    return ;
+        }
+    
+    if(x.PW1.value!=x.PW2.value)
+        {
+            alert("비밀번호가 서로 일치하지 않습니다.")
+            x.PW1.value="";
+            x.PW2.value="";
+            x.PW1.focus();
+            return;
+        }
+    if(x.FILES.value=="")
+        {
+            alert("파일을 선택해 주세요.")
+            return;
+        }
+    var content
+    content+= "이름 : "+document.x.irum.value;
+    content+= "<br>아이디 : "+document.x.ID.value;
+    
+    if(confirm("이름 : "+document.x.irum.value+"\n아이디 : "+document.x.ID.value+"\n가입 하시겠습니까?")==true)
+    alert("가입이 완료되었습니다. 감사합니다.")
+        
+    else
+    alert("가입이 취소되었습니다.")
+    }
+      </script>
+
+<body><form name=x>
+    <center>
+        <fieldset style="width: 350px;">
+            <legend style="text-align: center;">
+                <h2>회원가입</h2>
+            </legend>
+    <table>
+        <tr> <th>아&nbsp&nbsp이&nbsp&nbsp디</th>
+            <td><input type="text"size="10" name="ID">&nbsp;
+                <input type=button value="확인" onclick=yes()>&nbsp;
+                <input type=hidden name="IDCHCK"></td>
+        </tr>
+        
+        <tr> <th>비밀번호</th>
+            <td><input type="password"size="10" id="PW1" name="mb_pw"></td>
+        </tr>
+        <tr> <th>비밀번호 확인</th>
+            <td><input type="password"size="10" id="PW2"></td>
+        </tr>
+        <tr style="height: 20px;"></tr>
+        <tr>
+        <th>이&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp름</th>
+            <td><input type="text" size="10" id="irum"></td>
+        </tr>
+        <tr> <th>생년월일</th>
+            <td><input type="date" size="10" id="ymd"></td>
+        </tr>
+        <tr> <th>전화번호</th>
+            <td><input type="text" size="16" id="phon"></td>
+        </tr>
+        <tr> <th>주&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp소</th>
+            <td><input type="text" size="30" id="add"></td>
+        </tr>
+        <tr style="height: 20px;"></tr>
+        <tr>
+            <td colspan=2><center>
+            <input type= "submit" value="가입하기" name="LOGIN" onclick=yangsick()>
+            <input type= "reset" value="다시작성"></center>
+       </td>
+        </tr>
+    </table>
+    </form>
+    <br/>
+    <input type="radio" id="voice"><span>음성 기능 켜기</span>
+ </fieldset>
+
+    <div class="side">
+        <br/>
+        <div id="naver"><a href="https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fwww.naver.com"> 네이버로 로그인</a></div>
+        <br/>
+        <div id="kakao"><a href="https://accounts.kakao.com/login?continue=https%3A%2F%2Fkauth.kakao.com%2Foauth%2Fauthorize%3Fis_popup%3Dfalse%26ka%3Dsdk%252F1.39.7%2520os%252Fjavascript%2520sdk_type%252Fjavascript%2520lang%252Fko-KR%2520device%252FWin32%2520origin%252Fhttps%25253A%25252F%25252Fkahi.co.kr%26auth_tran_id%3Do4cd7udznp971e351bd0e5609096f134bf6a56d5882kf4sy2zi%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fkahi.co.kr%252FApi%252FMember%252FOauth2ClientCallback%252Fkakao%252F%26client_id%3D71e351bd0e5609096f134bf6a56d5882">카카오로 로그인</a></div>
+    </div> 
+</body>
+</html>
